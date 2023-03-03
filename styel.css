@@ -47,7 +47,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: var(--color-black);
+  color: var(--color-white);
 }
 ul {
   list-style: none;
@@ -93,12 +93,12 @@ p {
 #navbar {
   display: flex;
   justify-content: space-between;
-  background-color: var(--color-light-grey);
+  background-color: var(--color-black);
   align-items: center;
-  color: var(--color-black);
+  color: var(--color-white);
   padding: 16px;
 }
-.navbar__menu {
+.navbar_meun {
   display: flex;
 }
 .navbar__log {
@@ -112,10 +112,10 @@ p {
   border-radius: var(--size-border-radius);
 }
 .navbar__menu_item.active {
-  border: 1px solid var(--color-black);
+  border: 1px solid var(--color-white);
 }
 .navbar__menu_item:hover {
-  background-color: var(--color-white);
+  background-color: var(--color-dark-grey);
 }
 
 /* Home*/
@@ -147,6 +147,10 @@ p {
 .section {
   padding: 50px;
   text-align: center;
+
+  margin: auto;
+}
+.section__container {
   max-width: 1200px;
   margin: auto;
 }
@@ -202,4 +206,49 @@ p {
 }
 .job_period {
   font-size: var(--font-micro);
+}
+
+/* Skiil */
+#skills {
+  background-color: var(--color-yellow);
+}
+.skillset {
+  display: flex;
+  background-color: var(--color-dark-grey);
+  color: var(--color-light-white);
+  margin: 20px 0;
+}
+.skillset__title {
+  color: var(--color-white);
+}
+.skill {
+  margin-bottom: 32px;
+}
+.skil_description {
+  display: flex;
+  justify-content: space-between;
+}
+.skill__bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-dark-grey);
+}
+.skill__value {
+  height: 3px;
+  background-color: var(--color-white);
+}
+.skillset__left {
+  flex-basis: 60%;
+  background-color: var(--color-light-grey);
+  padding: 20px 40px;
+}
+.skillset__right {
+  flex-basis: 40%;
+}
+.Tools {
+  background-color: var(--color-grey);
+}
+.Tools,
+.etc {
+  padding: 20px;
 }
