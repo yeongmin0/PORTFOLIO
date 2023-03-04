@@ -375,3 +375,27 @@ p {
 .testimonal__speech_bubble a {
   color: var(--color-pink);
 }
+
+/*  Contact  */
+
+#contact {
+  background-color: var(--color-black);
+}
+.contact__title,
+.contact_Eail,
+.contact__rights {
+  color: var(--color-white);
+}
+
+.contact__title {
+  margin: 32px 0;
+}
+.contact__links {
+  font-size: var(--font-large);
+  margin: 24px;
+}
+.contact__links i:hover {
+  transform: scale(1.1);
+  color: var(--color-blue);
+  transition: all var(--anmimation-duration) ease-in;
+}
