@@ -22,10 +22,21 @@ navbarMenu.addEventListener("click", (event) => {
   if (link === null) {
     return;
   }
-  const scrollTo = document.querySelector(link);
-  scrollTo.scrollIntoView({
+  scrollIntoView(link);
+});
+
+// Contant Me 를 누를시 이동하기
+
+const Contant = document.querySelector(".home__contact");
+Contant.addEventListener("click", () => {
+  scrollIntoView("#contact");
+});
+
+function scrollIntoView(selector) {
+  const clickTo = document.querySelector(selector);
+  clickTo.scrollIntoView({
     behavior: "smooth",
     block: "start",
     inline: "nearest",
   });
-});
+}
