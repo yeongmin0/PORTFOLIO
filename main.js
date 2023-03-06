@@ -32,6 +32,15 @@ Contant.addEventListener("click", () => {
   scrollIntoView("#contact");
 });
 
+//  scroll 을 할시 home window 투명 해지는
+
+const homescroll = document.querySelector(".home__container");
+const homeHeight = homescroll.getBoundingClientRect().height;
+document.addEventListener("scroll", () => {
+  homescroll.style.opacity = 1 - window.scrollY / homeHeight;
+});
+
+// 유틸리티 함수 (Contant me / about )
 function scrollIntoView(selector) {
   const clickTo = document.querySelector(selector);
   clickTo.scrollIntoView({
