@@ -55,6 +55,28 @@ arrowUp.addEventListener("click", () => {
   scrollIntoView("#home");
 });
 
+// projects
+
+const workbtnContainer = document.querySelector(".work__categories");
+const projectsContainer = document.querySelector(".work__projects");
+const projects = document.querySelectorAll(".project");
+
+workbtnContainer.addEventListener("click", (e) => {
+  const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+  if (filter == null) {
+    return;
+  }
+
+  projects.forEach((project) => {
+    console.log(project.dataset.type);
+    if (filter === "*" || filter === project.dataset.type) {
+      project.classList.remove("invisible");
+    } else {
+      project.classList.add("invisible");
+    }
+  });
+});
+
 // 유틸리티 함수 (Contant me / about )
 function scrollIntoView(selector) {
   const clickTo = document.querySelector(selector);
