@@ -154,6 +154,8 @@ p {
   color: black;
 }
 .home__contact {
+  background-color: black;
+  color: var(--color-white);
   font-size: var(--font-regular);
   font-weight: var(--weight-regular);
   margin: 24px;
@@ -418,6 +420,26 @@ p {
   transition: all var(--anmimation-duration) ease-in;
 }
 
+/* Scroll */
+.arrow_up {
+  position: fixed;
+  bottom: 50px;
+  width: 70px;
+  height: 70px;
+  right: 50px;
+  font-size: 50px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  color: black;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 300ms ease-in;
+}
+
+.arrow_up.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
 /*For below 768px screen width*/
 @media screen and (max-width: 768px) {
   .navbar__toggle-btn {
