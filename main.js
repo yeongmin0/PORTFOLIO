@@ -55,7 +55,7 @@ arrowUp.addEventListener("click", () => {
   scrollIntoView("#home");
 });
 
-// projects
+// projects (my work) 클릭시 코드
 
 const workbtnContainer = document.querySelector(".work__categories");
 const projectsContainer = document.querySelector(".work__projects");
@@ -66,15 +66,19 @@ workbtnContainer.addEventListener("click", (e) => {
   if (filter == null) {
     return;
   }
+  projectsContainer.classList.add("anim-out");
 
-  projects.forEach((project) => {
-    console.log(project.dataset.type);
-    if (filter === "*" || filter === project.dataset.type) {
-      project.classList.remove("invisible");
-    } else {
-      project.classList.add("invisible");
-    }
-  });
+  setTimeout(() => {
+    projects.forEach((project) => {
+      if (filter === "*" || filter === project.dataset.type) {
+        project.classList.remove("invisible");
+      } else {
+        project.classList.add("invisible");
+      }
+    });
+    // 버튼 클릭시 애니메이션이 다시 돌아오는 것
+    projectsContainer.classList.remove("anim-out");
+  }, 300);
 });
 
 // 유틸리티 함수 (Contant me / about )
