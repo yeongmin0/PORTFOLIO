@@ -13,16 +13,23 @@ document.addEventListener("scroll", () => {
   }
 });
 
-// navbark 에 있는 about 을 누를 시 이동하는
-const navbarMenu = document.querySelector(".navbar_menu");
+// navbar 에 있는 about 을 누를 시 이동하는
+const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener("click", (event) => {
-  console.log(event.target.dataset.link);
   const target = event.target;
   const link = target.dataset.link;
   if (link === null) {
     return;
   }
+  navbarMenu.classList.remove("open");
   scrollIntoView(link);
+});
+
+// navbar toggle
+
+const navbarTogglebtn = document.querySelector(".navbar__toggle-btn");
+navbarTogglebtn.addEventListener("click", () => {
+  navbarMenu.classList.toggle("open");
 });
 
 // Contant Me 를 누를시 이동하기
@@ -66,6 +73,11 @@ workbtnContainer.addEventListener("click", (e) => {
   if (filter == null) {
     return;
   }
+
+  //  이전에 선택한 버튼에서 셀렉션을 없앤다
+  const active = document.querySelector(".category__btn.selected");
+  active.classList.remove("selected");
+  e.target.classList.add("selected");
   projectsContainer.classList.add("anim-out");
 
   setTimeout(() => {

@@ -108,7 +108,7 @@ p {
   background-color: var(--color-black);
   padding: 8px;
 }
-.navbar_menu {
+.navbar__menu {
   display: flex;
 }
 .navbar__log {
@@ -121,10 +121,9 @@ p {
   cursor: pointer;
   border-radius: var(--size-border-radius);
 }
-.navbar__menu_item.active {
-  border: 1px solid var(--color-white);
-}
+
 .navbar__menu_item:hover {
+  border-color: var(--color-white);
   background-color: var(--color-dark-grey);
 }
 .navbar__toggle-btn {
@@ -282,12 +281,12 @@ p {
 .work__categories {
   margin: 40px;
 }
-.category__btn.active,
+.category__btn.selected,
 .category__btn:hover {
   background-color: var(--color-black);
   color: var(--color-white);
 }
-.category__btn.active .category__count,
+.category__btn.selected .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
   top: 0;
@@ -312,6 +311,7 @@ p {
   justify-content: center;
   transition: all var(--anmimation-duration) ease-out;
 }
+
 .work__projects.anim-out {
   opacity: 0;
   transform: scale(0.96) translateY(40px);
@@ -459,11 +459,17 @@ p {
     flex-direction: column;
     align-items: flex-start;
   }
+  #navbar.navbar--dark {
+    padding: 16px;
+  }
   .navbar__menu {
     flex-direction: column;
     text-align: center;
     width: 100%;
     display: none;
+  }
+  .navbar__menu.open {
+    display: block;
   }
   .about__majors {
     flex-direction: column;
